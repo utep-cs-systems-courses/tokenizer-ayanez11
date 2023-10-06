@@ -94,6 +94,6 @@ void free_tokens(char **tokens)
     free(*t);
     *t++;
   }
-  free(*t);// removes pointer to ' '
+  free(*t);
   free(tokens);
 }

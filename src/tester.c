@@ -18,7 +18,6 @@
 int tests_run;
 /* end MinUnit */
 
-
 /* Tokenizer test cases */
 static char *test_find_token_start() {
     char *str = "  happy";
@@ -50,7 +49,7 @@ static char *test_tokenize() {
     return 0;
 }
 
-/* History test cases
+/*History test cases*/
 static char *test_add_history() {
     List* list = init_history();
     add_history(list, "happy");
@@ -59,14 +58,12 @@ static char *test_add_history() {
     mu_assert("add_history(list, 'joy')", strcmp(list->root->next->str, "joy") == 0);
     return 0;
 }
-
 static char *test_get_history() {
     List* list = init_history();
     add_history(list, "happy");
     mu_assert("get_history(list, 1)", strcmp(get_history(list, 1), "happy") == 0);
     return 0;
 }
-*/
 
 static char *all_tests() {
     if (TEST_TOKENIZER) {
@@ -75,12 +72,12 @@ static char *all_tests() {
         mu_run_test(test_count_tokens);
         mu_run_test(test_tokenize);
     }
-    /*
+  
     if (TEST_HISTORY) {
-        mu_run_test(test_add_history);
-        mu_run_test(test_get_history);
+      mu_run_test(test_add_history);
+      mu_run_test(test_get_history);
     }
-    */
+   
     return 0;
 }
 
